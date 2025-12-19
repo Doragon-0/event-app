@@ -1,0 +1,14 @@
+{
+	"name": "event-app",
+	"version": "1.0.0",
+	"description": "Application de gestion d'événements en TypeScript",
+	"scripts": {
+		"build": "tsc",
+		"start": "serve ."
+	},
+	"devDependencies": {
+		"serve": "^14.2.5",
+		"typescript": "^5.3.3"
+	}
+
+}
