@@ -1,6 +1,7 @@
 import { DataBase } from "../data/DataBase.js";
 import { Event } from "../models/Event.js";
 import { User } from "../models/User.js";
+import { navigateTo } from "../router/router.js";
         
 const message = document.getElementById("textMessage")!;
 
@@ -142,6 +143,33 @@ export function addResgistration():void{
 
 
 	});
+
+}
+
+export function connectAdmin(): void{
+
+	const formAdmin = document.getElementById("form-admin")! as HTMLFormElement;
+	formAdmin.addEventListener("submit", (e) => {
+
+		e.preventDefault();
+		const address = document.getElementById('email')! as HTMLInputElement;
+		const mdp = document.getElementById('password')! as HTMLInputElement;
+
+		if(address.value === "Admin" && mdp.value == "Admin"){
+
+			navigateTo("/add-event");
+
+		}else{
+
+			message.classList.add("errorMessage");
+	        message.classList.remove("successMessage");
+	        message.style.display = "block";   
+	        message.textContent = "Cet admin n'existe pas";
+	        floatBoxTemporarily();
+
+		}
+
+	}); 
 
 }
 

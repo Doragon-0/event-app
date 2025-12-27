@@ -1,5 +1,5 @@
 import { routes } from "./routes.js";
-import { addEventDom, addUserDom, homePageDom, addResgistration } from "../pageLogic/DOMExecution.js";
+import { addEventDom, addUserDom, homePageDom, addResgistration, connectAdmin } from "../pageLogic/DOMExecution.js";
 const app = document.getElementById("app");
 export function router() {
     const path = window.location.pathname;
@@ -28,5 +28,8 @@ function eventPerPage(path) {
     }
     if (path == "/register") {
         addResgistration();
+    }
+    if (path === "/admin") {
+        connectAdmin();
     }
 }

@@ -2,6 +2,7 @@ import { HomePage } from "../pages/HomePage.js";
 import { CreateEventPage } from "../pages/CreateEventPage.js";
 import { CreateUserPage } from "../pages/CreateUserPage.js";
 import { RegisterPage } from "../pages/CreateRegistration.js";
+import { AdminPage } from "../pages/AdminPage.js";
 export const routes = [
     {
         path: "/",
@@ -18,5 +19,9 @@ export const routes = [
     {
         path: "/register",
         component: RegisterPage
+    },
+    {
+        path: "/admin",
+        component: AdminPage
     }
 ];

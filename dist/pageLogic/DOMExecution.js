@@ -1,6 +1,7 @@
 import { DataBase } from "../data/DataBase.js";
 import { Event } from "../models/Event.js";
 import { User } from "../models/User.js";
+import { navigateTo } from "../router/router.js";
 const message = document.getElementById("textMessage");
 export function addEventDom() {
     const submit = document.querySelector(".add-event-form");
@@ -95,6 +96,24 @@ export function addResgistration() {
             message.textContent = error.message;
         }
         floatBoxTemporarily();
+    });
+}
+export function connectAdmin() {
+    const formAdmin = document.getElementById("form-admin");
+    formAdmin.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const address = document.getElementById('email');
+        const mdp = document.getElementById('password');
+        if (address.value === "Admin" && mdp.value == "Admin") {
+            navigateTo("/add-event");
+        }
+        else {
+            message.classList.add("errorMessage");
+            message.classList.remove("successMessage");
+            message.style.display = "block";
+            message.textContent = "Cet admin n'existe pas";
+            floatBoxTemporarily();
+        }
     });
 }
 export function homePageDom() {
