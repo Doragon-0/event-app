@@ -62,19 +62,32 @@ export function addUserDom(): void{
 	const submit = document.querySelector(".add-user-form")! as HTMLFormElement;
 	submit?.addEventListener("submit", (e) => {
 
-	
 
 		e.preventDefault();
 
 		const firstName = document.getElementById("userFirstName")! as HTMLInputElement;
 		const lastName = document.getElementById("userLastName")! as HTMLInputElement;
 		const address = document.getElementById("userEmail")! as HTMLInputElement;
+
+
+
 		if(!firstName.value.trim() || !lastName.value.trim() || !address.value.trim()){
 
         	message.classList.add("errorMessage");
 	        message.classList.remove("successMessage");
 	        message.style.display = "block";   
 	        message.textContent = "Veuillez remplir tous les champs";
+	        floatBoxTemporarily();
+	        return
+
+        }
+
+        if(!verifierEmailSaintJean(address.value)){
+
+        	message.classList.add("errorMessage");
+	        message.classList.remove("successMessage");
+	        message.style.display = "block";   
+	        message.textContent = "Entrer votre adresse mail institutionnel";
 	        floatBoxTemporarily();
 	        return
 
@@ -101,6 +114,11 @@ export function addUserDom(): void{
 
 	})
 
+}
+
+function verifierEmailSaintJean(email: string) {
+  const domaineAutorise = "@saintjeaningenieur.org";
+  return email.endsWith(domaineAutorise);
 }
 
 export function addResgistration():void{

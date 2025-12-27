@@ -53,6 +53,14 @@ export function addUserDom() {
             floatBoxTemporarily();
             return;
         }
+        if (!verifierEmailSaintJean(address.value)) {
+            message.classList.add("errorMessage");
+            message.classList.remove("successMessage");
+            message.style.display = "block";
+            message.textContent = "Entrer votre adresse mail institutionnel";
+            floatBoxTemporarily();
+            return;
+        }
         try {
             let user = new User(firstName.value, lastName.value, address.value);
             message.textContent = DataBase.users.addUser(user);
@@ -68,6 +76,10 @@ export function addUserDom() {
         }
         floatBoxTemporarily();
     });
+}
+function verifierEmailSaintJean(email) {
+    const domaineAutorise = "@saintjeaningenieur.org";
+    return email.endsWith(domaineAutorise);
 }
 export function addResgistration() {
     const submit = document.querySelector(".event-register-form");
