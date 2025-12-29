@@ -42,4 +42,4 @@ Informations sur l'auteur:
 
 	Nom: Assirdoua Daniel Bien Chebychev
 	matricule: 2425L102
-	Email: assirdoua.daniek@saintjeaningenieur.org
+	Email: assirdoua.daniel@saintjeaningenieur.org
