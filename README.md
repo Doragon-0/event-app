@@ -12,7 +12,7 @@ Installation & lancement
 2) Compiler le TypeScript 
 	tsc --watch 
 3) Ouvrir le projet 
-	npm start
+	npm start ou ouvrir avec vscode et exécuter live server
 
 
 Mode d’utilisation de l’application 
