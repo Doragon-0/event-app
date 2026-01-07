@@ -8,12 +8,12 @@ Ce projet est réalisé en HTML/CSS/TypeScript
 
 Installation & lancement 
 1) Ouvir l'invite de commande à la racine du projet
-
-2) Compiler le TypeScript 
+2) Installer les modules nodes pour pouvoir exécuter avec le serveur serve (faculatif si on utilise live server) :
+   npm install --save-dev serve
+4) Compiler le TypeScript 
 	tsc --watch 
-3) Ouvrir le projet 
+5) Ouvrir le projet 
 	npm start ou ouvrir avec vscode et exécuter live server
-
 
 Mode d’utilisation de l’application 
 
